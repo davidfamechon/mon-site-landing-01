@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>laguineu | Maintenance</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Russo+One&display=swap">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        /* Correction : min-height au lieu de height fixe pour permettre le scroll si besoin */
+        body, html { min-height: 100%; font-family: 'Comfortaa', sans-serif; color: white; }
+
+        .bg-image {
+    background: url('assets/images/hero/david_at_laguineu_studio_2.webp') no-repeat center center fixed; 
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0; left: 0;
+    z-index: -2; /* On le descend tout au fond */
+}
+
+/* Image 2 (Celle qui apparaît en fondu) */
+.bg-image-2 {
+    /* REMPLACE PAR LE NOM DE TA 2ÈME IMAGE */
+    background-image: url('assets/images/hero/header-bg.webp') !important; 
+    z-index: -1; /* Juste au-dessus de la première */
+    opacity: 0;
+    animation: crossfadeMaintenance 16s infinite;
+}
+/* Overlay (Filtre bleu) */
+.overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100vh;
+    background: rgba(44, 1, 94, 0.3); 
+   z-index: 0; /* Par-dessus les deux images */
+ }
+
+
+/* Scénario de l'animation */
+@keyframes crossfadeMaintenance {
+    0%   { opacity: 0; }
+    25%  { opacity: 0; }  /* IMAGE 1 reste seule pendant 4 secondes (0 à 25%) */
+    50%  { opacity: 1; }  /* Transition douce de 4 secondes vers l'image 2 */
+    75%  { opacity: 1; }  /* IMAGE 2 reste fixe pendant 4 secondes (50% à 75%) */
+    100% { opacity: 0; }  /* Transition retour vers l'image 1 en 4 secondes */
+}
+
+        .container {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh; /* S'adapte à la hauteur de l'écran */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .logo { width: 475px; height: auto; margin-bottom: 20px; transition: width 0.3s; }
+        .logo-tagline {
+            font-family: 'Comfortaa', sans-serif;
+            color: #fff;
+            /* On utilise clamp pour que la taille s'adapte aussi sur mobile */
+            font-size: clamp(18px, 3vw, 28px); 
+            text-transform: lowercase;
+            /* La marge négative pour l'effet "collé" sous le logo */
+            margin-top: -53px; 
+            margin-bottom: 30px;
+            margin-right: -106px;
+            font-weight: 400;
+            letter-spacing: 1px;
+}
+
+/* Ajustement pour mobile */
+@media (max-width: 767px) {
+    .logo-tagline {
+        font-size: clamp(16px, 3vw, 28px);
+        margin-top: -39px; /* On réduit le décalage sur petit écran */
+        margin-right: -86px;
+    }
+}
+
+        h1 { font-family: 'Russo One', sans-serif; font-size: clamp(1.8rem, 5vw, 3rem); color: #e65f17; margin-bottom: 20px; text-transform: uppercase; line-height: 1.1; }
+        
+        p { font-size: clamp(0.9rem, 2vw, 1.1rem); max-width: 650px; line-height: 1.5; margin-bottom: 25px; }
+
+        .btn-contact {
+            padding: 12px 28px;
+            border: 2px solid #e65f17;
+            color: #e65f17;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-contact:hover { background: #e65f17; color: white; }
+
+        /* --- RESPONSIVITÉ MOBILE & TABLETTE --- */
+        @media (max-width: 767px) {
+            .logo { width: 287px; }
+            .container { padding: 30px 15px; }
+        }
+
+        /* --- SPÉCIAL MODE PAYSAGE (Horizontal) --- */
+        /* Si l'écran fait moins de 500px de haut */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .container { justify-content: flex-start; padding-top: 20px; }
+            .logo { width: 350px; margin-bottom: 26px; margin-top: 16px; }
+            .logo-tagline {
+            font-size: clamp(16px, 3vw, 20px);
+            margin-top: -49px; /* On réduit le décalage sur petit écran */
+            margin-right: -102px;
+    }
+            h1 { font-size: 1.5rem; margin-bottom: 10px; }
+            p { font-size: 0.85rem; margin-bottom: 15px; }
+            .btn-contact { padding: 8px 20px; font-size: 0.8rem; }
+            
+        }
+        .highlight {
+            background-color: rgba(0, 162, 255, 0.4); /* Bleu avec 40% d'opacité */
+            padding: 2px 8px; /* Un peu d'espace autour du texte */
+            border-radius: 4px; /* Bords légèrement arrondis pour le style "feutre" */
+            box-decoration-break: clone; /* Assure que le fond suit bien le texte s'il revient à la ligne */
+            -webkit-box-decoration-break: clone;
+}
+
+    </style>
+</head>
+<body>
+    <div class="bg-image"></div>
+    <div class="bg-image bg-image-2"></div>
+
+    <div class="overlay"></div>
+
+    <div class="container">
+    <img src="assets/images/hero/logo-laguineu-blanc.svg" alt="Laguineu" class="logo">
+    <p class="logo-tagline">Graphic studio</p>
+    <h1>Be right back</h1>
+    
+    <p>
+    <span class="highlight">My website is getting a makeover!</span><br>
+    <span class="highlight">I am working on a multilingual version <br>to better support you</span><br>
+    <span class="highlight">in your graphic and digital projects.</span>
+</p>
+<p>
+    <span class="highlight">Need a quote or information?</span><br>
+    <span class="highlight">I remain available by email.</span>
+</p>
+<div class="contact-wrapper">
+    <button type="button" class="btn-contact" id="copyBtn" onclick="copyEmail(event)" style="cursor: pointer; background: transparent; font-family: 'Russo One', sans-serif;">
+        Contact me
+    </button>
+    
+    <span id="copyMessage" style="display:none; color: #e65f17; font-size: 0.8rem; margin-top: 10px; font-weight: bold;">
+        E-mail copied!
+    </span>
+
+    <p style="margin-top: 15px; font-size: 0.85rem; opacity: 0.9;">
+        <span class="highlight">info@laguineu.graphics</span>
+    </p>
+</div>
+
+    <div class="lang-switcher" style="margin-top: 40px; font-family: 'Comfortaa', sans-serif; font-size: 0.8rem;">
+    <a href="cat.html" style="color: #fcfbfbbd; text-decoration: none; margin: 0 5px;">CAT&nbsp;&nbsp;&nbsp;|</a>
+    <a href="es.html" style="color: #fcfbfbbd; text-decoration: none; margin: 0 5px;">ES&nbsp;&nbsp;&nbsp;|</a> 
+    <a href="fr.html" style="color: #fcfbfbbd; text-decoration: none; margin: 0 5px;">FR&nbsp;&nbsp;&nbsp;|</a>
+    <a href="en.html" style="color: #fcfbfbbd; text-decoration: none; margin: 0 5px;">EN</a>
+</div>
+</div>
+
+<script>
+function copyEmail(event) {
+    const email = "info@laguineu.graphics";
+    
+    // On copie dans le presse-papier
+    navigator.clipboard.writeText(email).then(() => {
+        const msg = document.getElementById("copyMessage");
+        msg.style.display = "block";
+        
+        // Le message disparaît après 3 secondes
+        setTimeout(() => {
+            msg.style.display = "none";
+        }, 3000);
+    });
+
+    // Si tu veux quand même essayer d'ouvrir le logiciel mail, 
+    // retire la ligne suivante. Si tu veux UNIQUEMENT copier, garde-la.
+    // event.preventDefault(); 
+}
+</script>
+</body>
+</html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>David Famechon | en maintenance</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Russo+One&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Birthstone&family=Comfortaa:wght@400;700&family=Russo+One&display=swap">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
@@ -59,20 +59,29 @@
             padding: 40px 20px;
         }
 
-        .logo { width: 475px; height: auto; margin-bottom: 20px; transition: width 0.3s; }
+         /* --- Nouveau style pour le logo texte --- */
+        .logo-text {
+            font-family: 'Birthstone', cursive;
+            /* On utilise clamp pour une taille fluide entre mobile et desktop */
+            font-size: clamp(80px, 15vw, 150px); 
+            color: #fff;
+            line-height: 0.8;
+            margin-bottom: 0;
+            font-weight: 400;
+            }
+        /* --- Ajustement du sous-titre --- */
         .logo-tagline {
             font-family: 'Comfortaa', sans-serif;
             color: #fff;
-            /* On utilise clamp pour que la taille s'adapte aussi sur mobile */
             font-size: clamp(18px, 3vw, 28px); 
             text-transform: lowercase;
-            /* La marge négative pour l'effet "collé" sous le logo */
-            margin-top: -53px; 
+            /* On ajuste la marge négative pour Birthstone */
+            margin-top: -20px; 
             margin-bottom: 30px;
-            margin-right: -154px;
+            margin-right: -60px;
             font-weight: 400;
             letter-spacing: 1px;
-}
+        }
 
 /* Ajustement pour mobile */
 @media (max-width: 767px) {
@@ -138,7 +147,7 @@
     <div class="overlay"></div>
 
     <div class="container">
-    <img src="assets/images/hero/logo-laguineu-blanc.svg" alt="Laguineu" class="logo">
+    <h2 class="logo-text">David Famechon</h2> 
     <p class="logo-tagline">atelier graphique</p>
     <h1>Bientôt de retour</h1>
     

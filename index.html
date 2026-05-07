@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>laguineu | Redirecting...</title>
+    <script>
+        // On récupère la langue du navigateur (ex: "fr-FR", "ca", "es-ES")
+        const userLang = navigator.language || navigator.userLanguage; 
+        const langBase = userLang.toLowerCase().split('-')[0]; // On garde juste "fr", "ca", etc. 
+        
+        // Logique de redirection
+        if (userLang.startsWith('ca')) {
+            window.location.href = "cat.html";
+        } else if (userLang.startsWith('es')) {
+            window.location.href = "es.html";
+        } else if (userLang.startsWith('fr')) {
+            window.location.href = "fr.html";
+        } else {
+            // Langue par défaut (anglais) pour le reste du monde
+            window.location.href = "en.html";
+        }
+    </script>
+</head>
+<body>
+    <p>Redirecting... / Redireccionant... / Redirigiendo...  / Redirigeant...</p>
+</body>
+</html>

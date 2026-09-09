@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# On autorise explicitement les dossiers de ressources pour un bon rendu SEO
+Allow: /assets/images/
+Allow: /assets/CSS/
+Allow: /assets/js/
+Allow: /assets/videos/
+
+# On bloque d'éventuels dossiers fantômes si vous ne les avez pas encore supprimés
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /wp-content/

@@ -1,235 +1,687 @@
 <!DOCTYPE html>
-<html lang="es-ES">
+<html lang="es-ES"> <!--<![endif]-->
 <head>
-    <meta charset="UTF-8">
+    <title>David Famechon | taller gráfico [ES]</title>
+    <meta name="description" content="Diseñar un logo, una tarjeta, un flyer, un folleto, un adesivo... etc. | David Famechon.com (es)"/>
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://davidfamechon.com/" />
+    <meta property="og:title" content="David Famechon | taller gráfico en Barcelona" />
+    <meta property="og:description" content="Diseñar un logo, una tarjeta, un flyer... Ideas creativas para conseguir el mejor impacto!" />
+    <meta property="og:image" content="https://davidfamechon.com/assets/images/hero/header-photo.webp" />
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>David Famechon | de mantenimiento</title>
-    <link rel="preload" href="assets/fonts/birthstone-v16-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="assets/fonts/russo-one-v18-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="canonical" href="https://davidfamechon.com/es.html">
-    <link rel="alternate" hreflang="ca" href="https://davidfamechon.com/cat.html">
-    <link rel="alternate" hreflang="es" href="https://davidfamechon.com/es.html">
-    <link rel="alternate" hreflang="fr" href="https://davidfamechon.com/fr.html">
-    <link rel="alternate" hreflang="en" href="https://davidfamechon.com/en.html">
-    <link rel="alternate" hreflang="x-default" href="https://davidfamechon.com/index.html">
-    <style>
-        /* Déclaration des polices locales */
-        @font-face {
-            font-family: 'Birthstone';
-            src: url('assets/fonts/birthstone-v16-latin-regular.woff2') format('woff2');
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-        }
-        @font-face {
-            font-family: 'Russo One';
-            src: url('assets/fonts/russo-one-v18-latin-regular.woff2') format('woff2');
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-        }
-        @font-face {
-            font-family: 'Comfortaa';
-            src: url('assets/fonts/comfortaa-v47-latin-regular.woff2') format('woff2');
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        /* Correction : min-height au lieu de height fixe pour permettre le scroll si besoin */
-        body, html { min-height: 100%; font-family: 'Comfortaa', sans-serif; color: white; }
+    <meta name="theme-color" content="#e65f17">
 
-        .bg-image {
-    background: url('assets/images/hero/david_at_laguineu_studio_2.webp') no-repeat center center fixed; 
-    background-size: cover;
-    height: 100vh;
-    width: 100%;
-    position: fixed;
-    top: 0; left: 0;
-    z-index: -2; /* On le descend tout au fond */
-}
+    <link rel="preload" href="assets/fonts/comfortaa-v47-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
 
-/* Image 2 (Celle qui apparaît en fondu) */
-.bg-image-2 {
-    /* REMPLACE PAR LE NOM DE TA 2ÈME IMAGE */
-    background-image: url('assets/images/hero/header-bg.webp') !important; 
-    z-index: -1; /* Juste au-dessus de la première */
-    opacity: 0;
-    animation: crossfadeMaintenance 16s infinite;
-}
-/* Overlay (Filtre bleu) */
-.overlay {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100vh;
-    background: rgba(44, 1, 94, 0.3); 
-   z-index: 0; /* Par-dessus les deux images */
- }
+    <!-- SEO Multilingue pour David Famechon -->
+    <link rel="alternate" hreflang="ca" href="https://davidfamechon.com/cat.html" />
+    <link rel="alternate" hreflang="fr" href="https://davidfamechon.com/fr.html" />
+    <link rel="alternate" hreflang="en" href="https://davidfamechon.com/en.html" />
+    <link rel="alternate" hreflang="es" href="https://davidfamechon.com/es.html" />
+    <link rel="alternate" hreflang="x-default" href="https://davidfamechon.com/cat.html" />
 
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="assets/CSS/01-lazyload.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="assets/CSS/02-media-parallax.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="assets/CSS/03-parallax.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="assets/CSS/04-popup.css" media="all" />
+    <link rel="stylesheet" href="assets/CSS/05-style-clean.css">
 
-/* Scénario de l'animation */
-@keyframes crossfadeMaintenance {
-    0%   { opacity: 0; }
-    25%  { opacity: 0; }  /* IMAGE 1 reste seule pendant 4 secondes (0 à 25%) */
-    50%  { opacity: 1; }  /* Transition douce de 4 secondes vers l'image 2 */
-    75%  { opacity: 1; }  /* IMAGE 2 reste fixe pendant 4 secondes (50% à 75%) */
-    100% { opacity: 0; }  /* Transition retour vers l'image 1 en 4 secondes */
-}
+    <link rel="stylesheet" href="assets/CSS/all.min.css" media="all"/>
 
-        .container {
-            position: relative;
-            z-index: 1;
-            min-height: 100vh; /* S'adapte à la hauteur de l'écran */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 40px 20px;
-        }
+    <script type="text/javascript" src="assets/js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-migrate-3.4.1.min.js"></script>
 
-            /* --- Nouveau style pour le logo texte --- */
-        .logo-text {
-            font-family: 'Birthstone', cursive;
-            /* On utilise clamp pour une taille fluide entre mobile et desktop */
-            font-size: clamp(80px, 15vw, 150px); 
-            color: #fff;
-            line-height: 0.8;
-            margin-bottom: 0;
-            font-weight: 400;
-            }
-        /* --- Ajustement du sous-titre --- */
-        .logo-tagline {
-            font-family: 'Comfortaa', sans-serif;
-            color: #fff;
-            font-size: clamp(18px, 3vw, 28px); 
-            text-transform: lowercase;
-            /* On ajuste la marge négative pour Birthstone */
-            margin-top: -20px; 
-            margin-bottom: 30px;
-            text-align: center;
-            font-weight: 400;
-            letter-spacing: 1px;
-        }
+    <script type="text/javascript" src="assets/js/01b-bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/02-myscript.js"></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
-/* Ajustement pour mobile */
-@media (max-width: 767px) {
-    .logo-tagline {
-        font-size: clamp(16px, 3vw, 28px);
-        margin-top: -39px; /* On réduit le décalage sur petit écran */
-        margin-right: -86px;
-    }
-}
-
-        h1 { font-family: 'Russo One', sans-serif; font-size: clamp(1.8rem, 5vw, 3rem); color: #e65f17; margin-bottom: 20px; text-transform: uppercase; line-height: 1.1; }
-        
-        p { font-size: clamp(0.9rem, 2vw, 1.1rem); max-width: 650px; line-height: 1.5; margin-bottom: 25px; }
-
-        .btn-contact {
-            padding: 12px 28px;
-            border: 2px solid #e65f17;
-            color: #e65f17;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .btn-contact:hover { background: #e65f17; color: white; }
-
-        /* --- RESPONSIVITÉ MOBILE & TABLETTE --- */
-        @media (max-width: 767px) {
-            .logo { width: 287px; }
-            .container { padding: 30px 15px; }
-        }
-
-        /* --- SPÉCIAL MODE PAYSAGE (Horizontal) --- */
-        /* Si l'écran fait moins de 500px de haut */
-        @media (max-height: 500px) and (orientation: landscape) {
-            .container { justify-content: flex-start; padding-top: 20px; }
-            .logo { width: 350px; margin-bottom: 26px; margin-top: 16px; }
-            .logo-tagline {
-            font-size: clamp(16px, 3vw, 20px);
-            margin-top: -49px; /* On réduit le décalage sur petit écran */
-            margin-right: -102px;
-    }
-            h1 { font-size: 1.5rem; margin-bottom: 10px; }
-            p { font-size: 0.85rem; margin-bottom: 15px; }
-            .btn-contact { padding: 8px 20px; font-size: 0.8rem; }
-            
-        }
-        .highlight {
-            background-color: rgba(0, 162, 255, 0.4); /* Bleu avec 40% d'opacité */
-            padding: 2px 8px; /* Un peu d'espace autour du texte */
-            border-radius: 4px; /* Bords légèrement arrondis pour le style "feutre" */
-            box-decoration-break: clone; /* Assure que le fond suit bien le texte s'il revient à la ligne */
-            -webkit-box-decoration-break: clone;
-}
-
-    </style>
 </head>
-<body>
-    <div class="bg-image"></div>
-    <div class="bg-image bg-image-2"></div>
 
-    <div class="overlay"></div>
 
-    <div class="container">
-    <h2 class="logo-text">David Famechon</h2> 
-    <p class="logo-tagline">taller gráfico</p>
-    <h1>Volvemos pronto</h1>
+<body id="top" class="home">
+    <div class="bg-layer bg-layer-1"></div>
+    <div class="bg-layer bg-layer-2"></div>
     
-    <p>
-    <span class="highlight">¡Mi web se renueva!</span><br>
-    <span class="highlight">Estoy trabajando en una versión multilingüe <br>para acompañaros mejor</span><br>
-    <span class="highlight">en vuestros proyectos gráficos y digitales.</span>
-</p>
-<p>
-    <span class="highlight">¿Necesitáis un presupuesto o información?</span><br>
-    <span class="highlight">Sigo disponible por correo electrónico.</span>
-</p>
-<div class="contact-wrapper">
-    <button type="button" class="btn-contact" id="copyBtn" onclick="copyEmail(event)" style="cursor: pointer; background: transparent; font-family: 'Russo One', sans-serif;">
-        Contacta conmigo
-    </button>
-    
-    <span id="copyMessage" style="display:none; color: #e65f17; font-size: 0.8rem; margin-top: 10px; font-weight: bold;">
-        E-mail copiado!
-    </span>
+	<div id="motopress-main" class="main-holder">
+		<!--Begin #motopress-main-->
+		<header class="motopress-wrapper header">
+			<div class="container">
+				<div class="row">
+					<div class="span12">
+						<div class="hashAncor" id="inicio"></div>
+<div class="row">
+	<div class="span12">
+		<div class="extra-logo">
+			<img src="assets/images/hero/extra-logo.webp" alt="David Famechon.com (cat)" title="taller gráfico">
+	</div>	</div>
+</div>
+<div class="header-wrap">
+	<div>
+		<!-- BEGIN MAIN NAVIGATION -->
+<nav class="nav nav__primary clearfix">
+<ul id="topnav" class="sf-menu"><li class="menu-item"><a href="es.html#inicio">inicio</a></li>
+<li class="menu-item"><a href="es.html#quien-soy">quien soy</a></li>
+<li class="menu-item"><a href="es.html#conocimientos">conocimientos</a></li>
+<li class="menu-item"><a href="es.html#experiencia">experiencia</a></li>
+<li class="menu-item"><a href="es.html#servicios">servicios</a></li>
+<li class="menu-item menu-item-has-children"><a href="es.html#press-book">Press Book</a>
+<ul class="sub-menu">
+	<li class="menu-item"><a title="Press Book 2 (continuación)" href="portfolio-es.html">Ver más</a></li>
+</ul>
+</li>
+<li class="menu-item"><a href="es.html#contacto">contacto</a></li>
+</ul><div class="nav-button"><span class="marker"></span><span class="text">menu</span></div>
+</nav><!-- END MAIN NAVIGATION -->	</div>
+</div>
+<div class="row">
+	<div class="span12">
+		<!-- BEGIN LOGO -->
+    <div class="logo pull-left">
+      <a href="es.html" class="logo_h logo_h__img logo-hover-wrap">
+          <img src="assets/images/hero/logo_david-famechon_blanc.svg" 
+               class="logo-normal" 
+               alt="David Famechon.com - Taller gráfico" 
+               title="David Famechon.com - Taller gráfico" 
+               style="width: 700px; height: auto;">
+          <img src="assets/images/hero/logo_david-famechon_orange_hover.svg" 
+               class="logo-hover" 
+               alt="David Famechon.com - Taller gráfico" 
+               title="David Famechon.com - Taller gráfico" 
+               style="width: 700px; height: auto;">
+      </a>
+      <h1 class="logo_tagline">taller gráfico</h1>
+  </div>
+<!-- END LOGO -->	</div>
+</div>
+<div class="row">
+	<div class="span12 social-nets-wrapper">
+		<ul class="social">
+    <li><a href="cat.html" aria-label="Versió en català">Cat</a></li>
+    <li><a href="fr.html" aria-label="Version en français">Fr</a></li>
+    <li><a href="en.html" aria-label="English version">En</a></li>
+</ul></div>
+</div>
+<!-- photo trombine header
+	<div class="row">
+		<div class="span12">
+			<div class="header-photo">
+			<figure><img src="assets/images/hero/header-photo.webp" alt="David Famechon.com (cat)" title="taller gráfico"></figure>
+	</div>		</div>
+	</div>
+  -->
+					</div>
+				</div>
+			</div>
+		</header>
+<div class="motopress-wrapper content-holder clearfix">
+	<div class="container">
+		<div class="row">
+						<div class="span12">
+				<div class="row">
+					<div class="span12">
+							<div id="post-203" class="page post-203 type-page status-publish hentry">
+		<div class="hashAncor" id="quien-soy"></div>
+<section class="lazy-load-box trigger effect-fade" data-delay="0" data-speed="1200" style="-webkit-transition: all 1200ms ease; transition: all 1200ms ease;">
+    <div class="title-box clearfix"><h2 class="title-box_primary title-highlight">¿Quién soy?</h2><h3 class="title-box_secondary">Filosofía y espíritu</h3></div>
+    <h3 style="text-align: center;">Diseño estratégico para marcas que quieren dejar huella.</h3>
+    <div class="two-columns">Lejos de fórmulas mágicas, creo en el diseño con propósito. Como diseñador gráfico, desarrollador web y fotógrafo freelance en Barcelona, mi trabajo es traducir la esencia de tu proyecto en una experiencia visual potente. Ya sea dando forma a una nueva identidad de marca, diseñando una web intuitiva o capturando la imagen perfecta, fusiono creatividad, precisión técnica y funcionalidad. Mi compromiso es claro: ofrecer soluciones de alta calidad, adaptadas a tus necesidades y siempre dentro de los plazos establecidos. Trabajemos juntos para que tu comunicación visual juegue a tu favor.</div>
+</section>
 
-    <p style="margin-top: 15px; font-size: 0.85rem; opacity: 0.9;">
-        <span class="highlight">info@laguineu.graphics</span>
-    </p>
+<div class="row">
+    <div class="span4">
+        <section class="lazy-load-box trigger effect-slidefromleft" data-delay="0" data-speed="1200" style="-webkit-transition: all 1200ms ease; transition: all 1200ms ease;">
+            <div class="service-box">
+                <figure class="icon"><i class="fa-solid fa-star"></i></figure>
+                <div class="service-box_body">
+                    <h2 class="title"><b>El Taller</b><br />Diseño 360º</h2>
+                    <div class="service-box_txt">Es tu estudio creativo de proximidad en Barcelona. Especializados en diseño y producción, damos vida a proyectos de comunicación visual globales, desde soportes impresos (editorial y branding) hasta el entorno digital (UI/UX).</div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <div class="span4">
+        <section class="lazy-load-box trigger effect-slideup" data-delay="0" data-speed="1200" style="-webkit-transition: all 1200ms ease; transition: all 1200ms ease;">
+            <div class="service-box">
+                <figure class="icon"><i class="fa-solid fa-flag"></i></figure>
+                <div class="service-box_body">
+                    <h2 class="title"><b>Filosofía</b><br />Empatía y Estrategia</h2>
+                    <div class="service-box_txt">El buen diseño nace de escuchar. Trabajo con profunda empatía para entender tu negocio. El objetivo no es solo hacer una gráfica atractiva, sino crear soluciones estratégicas que conecten de verdad con tu público.</div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <div class="span4">
+        <section class="lazy-load-box trigger effect-slidefromright" data-delay="0" data-speed="1200" style="-webkit-transition: all 1200ms ease; transition: all 1200ms ease;">
+            <div class="service-box">
+                <figure class="icon"><i class="fa-solid fa-paper-plane"></i></figure>
+                <div class="service-box_body">
+                    <h2 class="title"><b>Misión</b><br />Compromiso y Resultados</h2>
+                    <div class="service-box_txt">Tu satisfacción es la única métrica que importa. Me implico al 100% en cada proyecto, aportando rigor, innovación y atención al detalle para transformar nuestros objetivos compartidos en una <br>realidad de éxito.</div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div><!-- .row (end) -->
+<div class="hashAncor" id="conocimientos"></div>
+<section class="parallax-box"><div class="parallax-content">
+<section class="lazy-load-box trigger effect-fade" data-delay="0" data-speed="1200" style="-webkit-transition: all 1200ms ease; -moz-transition: all 1200ms ease; -ms-transition: all 1200ms ease; -o-transition: all 1200ms ease; transition: all 1200ms ease;">
+<div class="title-box clearfix"><h2 class="title-box_primary title-highlight">conocimientos</h2><h3 class="title-box_secondary">Stack creativo y universo de trabajo</h3></div><!-- //.title-box -->
+
+<div class="skills_wrapper ">
+    <div class="skills-item" data-level="95" data-base-color="#ffe89c" data-skill-color="#35a49d">
+        <div class="inner_wrap">
+            <div class="desc">
+                <h5><a href="#servicios" title="Branding & Identidad">Branding & Identidad</a></h5>
+            </div>
+            <div class="diagram"><span><em></em></span></div>
+            <div class="level"><span>95%</span></div>
+        </div>
+    </div>
+<div class="skills-item" data-level="90" data-base-color="#ffe89c" data-skill-color="#35a49d">
+    <div class="inner_wrap">
+        <div class="desc">
+            <h5><a href="#servicios" title="Dirección Artística">Dirección Artística</a></h5>
+        </div>
+        <div class="diagram"><span><em></em></span></div>
+        <div class="level"><span>90%</span></div>
+    </div>
 </div>
 
-    <div class="lang-switcher" style="margin-top: 40px; font-family: 'Comfortaa', sans-serif; font-size: 0.8rem;">
-    <a href="cat.html" style="color: #fcfbfbbd; text-decoration: none; margin: 0 5px;">CAT&nbsp;&nbsp;&nbsp;|</a>
-    <a href="es.html" style="color: #fcfbfbbd; text-decoration: none; margin: 0 5px;">ES&nbsp;&nbsp;&nbsp;|</a> 
-    <a href="fr.html" style="color: #fcfbfbbd; text-decoration: none; margin: 0 5px;">FR&nbsp;&nbsp;&nbsp;|</a>
-    <a href="en.html" style="color: #fcfbfbbd; text-decoration: none; margin: 0 5px;">EN</a>
-</div>
+<div class="skills-item" data-level="95" data-base-color="#ffe89c" data-skill-color="#35a49d">
+    <div class="inner_wrap">
+        <div class="desc">
+            <h5><a href="#servicios" title="Ecosistema Adobe - Affinity">Ecosistema Adobe - Affinity</a></h5>
+        </div>
+        <div class="diagram"><span><em></em></span></div>
+        <div class="level"><span>95%</span></div>
+    </div>
 </div>
 
-<script>
-function copyEmail(event) {
-    const email = "info@laguineu.graphics";
+<div class="skills-item" data-level="90" data-base-color="#ffe89c" data-skill-color="#35a49d">
+    <div class="inner_wrap">
+        <div class="desc">
+            <h5><a href="#servicios" title="Producción Editorial & Print">Producción Editorial & Print</a></h5>
+        </div>
+        <div class="diagram"><span><em></em></span></div>
+        <div class="level"><span>90%</span></div>
+    </div>
+</div>
+
+<div class="skills-item" data-level="80" data-base-color="#ffe89c" data-skill-color="#35a49d">
+    <div class="inner_wrap">
+        <div class="desc">
+            <h5><a href="#servicios" title="Diseño Web & WordPress">Diseño Web & WordPress</a></h5>
+        </div>
+        <div class="diagram"><span><em></em></span></div>
+        <div class="level"><span>80%</span></div>
+    </div>
+</div>
+
+<div class="skills-item" data-level="75" data-base-color="#ffe89c" data-skill-color="#35a49d">
+    <div class="inner_wrap">
+        <div class="desc">
+            <h5><a href="#servicios" title="Diseño Web UI / UX">Diseño Web UI/UX</a></h5>
+        </div>
+        <div class="diagram"><span><em></em></span></div>
+        <div class="level"><span>75%</span></div>
+    </div>
+</div>
+
+<div class="skills-item" data-level="85" data-base-color="#ffe89c" data-skill-color="#35a49d">
+    <div class="inner_wrap">
+        <div class="desc">
+            <h5><a href="#servicios" title="Fotografía & Retoque Digital">Fotografía & Retoque Digital</a></h5>
+        </div>
+        <div class="diagram"><span><em></em></span></div>
+        <div class="level"><span>85%</span></div>
+    </div>
+</div>
+
+<div class="skills-item" data-level="70" data-base-color="#ffe89c" data-skill-color="#35a49d">
+    <div class="inner_wrap">
+        <div class="desc">
+            <h5><a href="#servicios" title="IA Generativa Creativa">IA Generativa Creativa</a></h5>
+        </div>
+        <div class="diagram"><span><em></em></span></div>
+        <div class="level"><span>70%</span></div>
+    </div>
+</div>
+
+<div class="skills-item" data-level="85" data-base-color="#ffe89c" data-skill-color="#35a49d">
+    <div class="inner_wrap">
+        <div class="desc">
+            <h5><a href="#servicios" title="Estrategia & Comunicación">Estrategia & Comunicación</a></h5>
+        </div>
+        <div class="diagram"><span><em></em></span></div>
+        <div class="level"><span>85%</span></div>
+    </div>
+</div>
+
+<div class="skills-item" data-level="100" data-base-color="#ffe89c" data-skill-color="#35a49d">
+    <div class="inner_wrap">
+        <div class="desc">
+            <h5><a href="#servicios" title="Francés (Lengua Nativa)">Francés (Lengua Nativa)</a></h5>
+        </div>
+        <div class="diagram"><span><em></em></span></div>
+        <div class="level"><span>100%</span></div>
+    </div>
+</div>
+</div>
+</section>
+
+</div><div data-speed="3" class="parallax-bg" style="background:url('assets/images/hero/parallax-img2.avif') no-repeat center 0; left:50%; margin-left:-960px; width:1920px"></div></section>
+<div class="hashAncor" id="experiencia"></div>
+<section class="lazy-load-box trigger effect-fade" data-delay="0" data-speed="800" style="-webkit-transition: all 1200ms ease; -moz-transition: all 1200ms ease; -ms-transition: all 1200ms ease; -o-transition: all 1200ms ease; transition: all 1200ms ease;">
+<div class="title-box clearfix"><h2 class="title-box_primary title-highlight">Experiencia</h2><h3 class="title-box_secondary">La trayectoria</h3></div><!-- //.title-box -->
+</section>
+<div class="row">
+<div class="span6"><section class="lazy-load-box trigger effect-slidefromleft " data-delay="0" data-speed="1200" style="-webkit-transition: all 1200ms ease; -moz-transition: all 1200ms ease; -ms-transition: all 1200ms ease; -o-transition: all 1200ms ease; transition: all 1200ms ease;">
+<div class="extra-wrap ">
+<div class="chronology_wrapper experienceBlock">
     
-    // On copie dans le presse-papier
-    navigator.clipboard.writeText(email).then(() => {
-        const msg = document.getElementById("copyMessage");
-        msg.style.display = "block";
-        
-        // Le message disparaît après 3 secondes
-        setTimeout(() => {
-            msg.style.display = "none";
-        }, 3000);
-    });
+    <div class="chronology-item work-experience defaultItem">
+        <div class="inner_wrap">
+            <div class="desc-left">
+                <div class="st-date"><span>octubre 2005 - presente</span></div>
+                <h5><a href="#contacto" title="Diseñador gráfico freelance">Diseñador gráfico freelance</a></h5>
+            </div>
+            <div class="desc-right">
+                <p class="excerpt">Más de 15 años de experiencia independiente ofreciendo soluciones gráficas integrales. Especializado en la creación de identidad corporativa (logotipos, branding), diseño editorial y publicitario (trípticos, flyers, vinilos), así como en el desarrollo de páginas web estratégicas (HTML/CSS) y plataformas CMS (WordPress, PrestaShop, etc.). Transformo tus ideas en herramientas de comunicación visuales y efectivas.</p>
+            </div>
+        </div>
+        <div class="extraMarker"></div>
+    </div>
+    
+    <div class="chronology-item work-experience defaultItem">
+        <div class="inner_wrap">
+            <div class="desc-left">
+                <div class="st-date"><span>septiembre 1984 -</span></div> 
+                <div class="end-date"><span>marzo 2005</span></div>
+                <h5><a href="#contacto" title="Ilustrador técnico y Diseñador gráfico">Ilustrador técnico y Diseñador gráfico</a></h5>
+            </div>
+            <div class="desc-right">
+                <p class="excerpt">Más de dos décadas forjando una sólida base técnica y creativa en sectores de alta exigencia. Amplia trayectoria en ilustración técnica y diseño gráfico aplicado a la industria aeronáutica y del automóvil, combinada con proyectos de alto impacto para el mundo editorial y las agencias de publicidad. <br>Un aprendizaje riguroso que garantiza precisión en cada detalle.</p>
+            </div>
+        </div>
+        <div class="extraMarker"></div>
+    </div>
 
-    // Si tu veux quand même essayer d'ouvrir le logiciel mail, 
-    // retire la ligne suivante. Si tu veux UNIQUEMENT copier, garde-la.
-    // event.preventDefault(); 
-}
+</div>
+</section></div>
+<div class="span6"><section class="lazy-load-box trigger effect-slidefromright " data-delay="0" data-speed="800" style="-webkit-transition: all 800ms ease; -moz-transition: all 800ms ease; -ms-transition: all 800ms ease; -o-transition: all 800ms ease; transition: all 800ms ease;"><img src="assets/images/hero/un_peu_dhistoire_4.webp" alt="Il·lustració d'una mica d'història i experiència" width="570" height="402" /></section></div>
+</div><!-- .row (end) -->
+<div class="hashAncor" id="servicios"></div>
+<p class="p1"><script type="text/javascript">
+          jQuery(function() {
+              jQuery("#mediaparallax_69b1d8155dce2").cherryMediaParallax({
+                bufferRatio: 1.5
+              });
+          });
+    </script><section id="mediaparallax_69b1d8155dce2" class="parallax_section cherry_video_parallax_1" data-type-media="video" data-mp4="true" data-webm="true" data-ogv="true" data-poster="true"><div class="container parallax_content">
+<section class="lazy-load-box trigger effect-fade" data-delay="0" data-speed="800" style="-webkit-transition: all 800ms ease; -moz-transition: all 800ms ease; -ms-transition: all 800ms ease; -o-transition: all 800ms ease; transition: all 800ms ease;">
+<div class="title-box clearfix"><h2 class="title-box_primary title-highlight">Servicios</h2><h3 class="title-box_secondary">Las habilidades del taller gráfico</h3></div>
+
+<div class="row">
+<div class="span6">
+<section class="lazy-load-box trigger effect-slidefromleft" data-delay="0" data-speed="800" style="-webkit-transition: all 800ms ease; transition: all 800ms ease;">
+<div id="id-1293920109" class="accordion">
+
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#id-1293920109" href="#907627699">Publicidad Impresa: Flyers, Pósters y Tarjetas</a>
+    </div>
+    <div class="accordion-body collapse" id="907627699">
+      <div class="accordion-inner">Da visibilidad a tu negocio con soportes físicos de alto impacto. Desde el diseño creativo hasta la impresión final, me encargo de todo: flyers, cartelería, tarjetas de visita y folletos promocionales. Ofrezco acabados profesionales y precios competitivos para garantizar que tu marca destaque en cualquier entorno.</div>
+    </div>
+  </div>
+
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#id-1293920109" href="#1983380661">Diseño Editorial: Catálogos, Libros y Revistas</a>
+    </div>
+    <div class="accordion-body collapse" id="1983380661">
+      <div class="accordion-inner">Estructuro tu contenido con rigor y elegancia. Soy especialista en maquetación editorial para catálogos comerciales, boletines periódicos, memorias corporativas y libros. Fusiono una estética impecable con una lectura fluida para transmitir tu información con la máxima claridad.</div>
+    </div>
+  </div>
+
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#id-1293920109" href="#692299975">Identidad Visual: Vinilos y Adhesivos</a>
+    </div>
+    <div class="accordion-body collapse" id="692299975">
+      <div class="accordion-inner">Transforma tus espacios en potentes canales de comunicación. Diseño y produzco vinilos decorativos, rotulación para escaparates y adhesivos personalizados. Una solución duradera y estética para reforzar la presencia de tu marca a pie de calle y captar la atención de <br>nuevos clientes.</div>
+    </div>
+  </div>
+
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#id-1293920109" href="#1285237675">Desarrollo Web: Páginas, Blogs y Newsletters</a>
+    </div>
+    <div class="accordion-body collapse" id="1285237675">
+      <div class="accordion-inner">Tu ventana digital al mundo. Creo sitios web modernos, totalmente adaptativos (responsive) y optimizados para buscadores (SEO). Ya sea una web corporativa, un blog personal o una newsletter profesional, te ayudo a construir una presencia en línea sólida que convierta visitantes en clientes.</div>
+    </div>
+  </div>
+
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#id-1293920109" href="#517635972">Fotografía, Audiovisuales y Gestión de Contenidos</a>
+    </div>
+    <div class="accordion-body collapse" id="517635972">
+      <div class="accordion-inner">
+        <p>Una imagen profesional vale más que mil palabras. Ofrezco servicios de fotografía publicitaria y creación de contenido audiovisual para dar relevancia a tus productos o servicios. Domino las técnicas de retoque digital para garantizar resultados de alta calidad.</p>
+        <p>Además, gracias a mi red de colaboradores, puedo gestionar traducciones profesionales a diversas lenguas europeas, asegurando la máxima precisión técnica para tus proyectos internacionales.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</section>
+</div>
+<div class="span6"><section class="lazy-load-box trigger effect-slidefromright " data-delay="0" data-speed="800" style="-webkit-transition: all 800ms ease; -moz-transition: all 800ms ease; -ms-transition: all 800ms ease; -o-transition: all 800ms ease; transition: all 800ms ease;"><a href="portfolio-es.html" title="Ver el Press Book">
+    <img src="assets/images/hero/services-img.webp" alt="..." width="570" height="402" />
+</a></section></div>
+</div><!-- .row (end) -->
+</div><div class="parallax_inner"><video class="parallax_media" data-base-width="1920" data-base-height="1080" poster="assets/videos/laguineu_taller_diseno_grafico_video.webp" autoplay loop muted playsinline><source src="assets/videos/laguineu_taller_diseno_grafico_video.mp4" type="video/mp4"><source src="assets/videos/laguineu_taller_diseno_grafico_video.webm" type="video/webm"></video></div></section>
+<div class="hashAncor" id="press-book"></div>
+<div class="content_box  ">
+<section class="lazy-load-box trigger effect-fade" data-delay="0" data-speed="800" style="-webkit-transition: all 800ms ease; -moz-transition: all 800ms ease; -ms-transition: all 800ms ease; -o-transition: all 800ms ease; transition: all 800ms ease;">
+<div class="title-box clearfix"><h2 class="title-box_primary">Press Book</h2><h3 class="title-box_secondary">Selección de proyectos</h3></div><!-- //.title-box -->
+<div class="isotope_wrapper"><div class="masonry_view masonryView" data-masonry-col="3"><div class="masonry-item"><div class="inner_wrap"><div class="content"><figure class="resized thumbnail featured-thumbnail"><a href="assets/images/hero/ecom2.webp" title="ecom" rel="prettyPhoto"><img decoding="async" src="assets/images/hero/ecom2-370x328.webp" alt="ecom" /><span class="zoom-icon"></span></a></figure><div class="desc"><h5><a href="assets/images/hero/ecom2.webp" title="ecom">ecom</a></h5></div></div></div></div><div class="masonry-item"><div class="inner_wrap"><div class="content"><figure class="resized thumbnail featured-thumbnail"><a href="assets/images/hero/ElsQuatreVents2.webp" title="La FITI" rel="prettyPhoto"><img decoding="async" src="assets/images/hero/ElsQuatreVents2-370x328.webp" alt="La FITI" /><span class="zoom-icon"></span></a></figure><div class="desc"><h5><a href="assets/images/hero/ElsQuatreVents2.webp" title="La FITI">La FITI</a></h5></div></div></div></div><div class="masonry-item"><div class="inner_wrap"><div class="content"><figure class="resized thumbnail featured-thumbnail"><a href="assets/images/hero/sci-portdevau4.webp" title="SCI Port de Vau" rel="prettyPhoto"><img decoding="async" src="assets/images/hero/sci-portdevau4-370x328.webp" alt="SCI Port de Vau" /><span class="zoom-icon"></span></a></figure><div class="desc"><h5><a href="assets/images/hero/sci-portdevau4.webp" title="SCI Port de Vau">SCI Port de Vau</a></h5></div></div></div></div><div class="masonry-item illustrator photoshop  format-standart"><div class="inner_wrap"><div class="content"><figure class="resized thumbnail featured-thumbnail"><a href="assets/images/hero/truffesManu6.webp" title="Trufes de figues" rel="prettyPhoto"><img decoding="async" src="assets/images/hero/truffesManu6-370x328.webp" alt="Trufes de figues" /><span class="zoom-icon"></span></a></figure><div class="desc"><h5><a href="assets/images/hero/truffesManu6.webp" title="Trufes de figues">Trufes de figues</a></h5></div></div></div></div><div class="masonry-item"><div class="inner_wrap"><div class="content"><figure class="resized thumbnail featured-thumbnail"><a href="assets/images/hero/PelukeriaFM1.webp" title="La Pelukeria FM" rel="prettyPhoto"><img decoding="async" src="assets/images/hero/PelukeriaFM1-370x328.webp" alt="La Pelukeria FM" /><span class="zoom-icon"></span></a></figure><div class="desc"><h5><a href="assets/images/hero/PelukeriaFM1.webp" title="La Pelukeria FM">La Pelukeria FM</a></h5></div></div></div></div><div class="masonry-item"><div class="inner_wrap"><div class="content"><figure class="resized thumbnail featured-thumbnail"><a href="assets/images/hero/Amsterdamer1.webp" title="Amsterdamer" rel="prettyPhoto"><img decoding="async" src="assets/images/hero/Amsterdamer1-370x328.webp" alt="Amsterdamer" /><span class="zoom-icon"></span></a></figure><div class="desc"><h5><a href="assets/images/hero/Amsterdamer1.webp" title="Amsterdamer">Amsterdamer</a></h5></div></div></div></div></div></div>
+<p style="text-align: center;"><a href="portfolio-es.html" title="ver más" class="btn btn-primary btn-large btn-inline " target="_self">ver más</a><!-- .btn -->
+</section>
+<div class="clear"></div></div><!-- .content_box (end) -->
+<div class="hashAncor" id="contacto"></div>
+<div class="content_box contacts ">
+<section class="lazy-load-box trigger effect-fade" data-delay="0" data-speed="800" style="-webkit-transition: all 800ms ease; -moz-transition: all 800ms ease; -ms-transition: all 800ms ease; -o-transition: all 800ms ease; transition: all 800ms ease;">
+<div class="title-box clearfix"><h2 class="title-box_primary title-highlight">Contacto</h2><h3 class="title-box_secondary">La mejor manera de empezar</h3></div>
+
+<div class="row">
+    <div class="span4">
+        <section class="lazy-load-box trigger effect-slidefromleft" data-delay="0" data-speed="800" style="-webkit-transition: all 800ms ease; transition: all 800ms ease;">
+            <h3><b>¿Tienes un proyecto en mente?</b></h3>
+            <p>Explícame qué necesitas. Ya sea para una nueva identidad visual, una web o material impreso, estaré encantado de escucharte y prepararte un presupuesto a medida sin compromiso.</p>
+            
+            <div class="phone">
+                <a href="#" id="dynamic-phone-link">+34 687 739 645</a>
+            </div>
+            <div class="extra-wrap email">
+                <p><a href="mailto:info@davidfamechon.com">info@davidfamechon.com</a></p>
+            </div>
+        </section>
+    </div>
+
+    <div class="span8">
+        <section class="lazy-load-box trigger effect-slidefromright" data-delay="0" data-speed="800" style="-webkit-transition: all 800ms ease; transition: all 800ms ease;">
+            <h3><b>Escríbeme aquí mismo</b></h3>
+
+            <form action="https://formspree.io/f/xlgoljqp" method="POST" class="clean-form">
+                <p class="field">
+                    <input type="text" name="name" placeholder="Tu nombre" aria-label="Tu nombre" autocomplete="name" required>
+                </p>
+                <p class="field">
+                    <input type="email" name="email" placeholder="Tu correo electrónico" aria-label="Tu correo electrónico" autocomplete="email" required>
+                </p>
+                <p class="field">
+                    <textarea name="message" placeholder="Tu mensaje..." aria-label="Tu mensaje..." required></textarea>
+                </p>
+                
+                <input type="hidden" name="_subject" value="Nuevo mensaje desde davidfamechon.com (ES)">
+                <input type="hidden" name="_next" value="https://www.google.com">
+                
+                <div style="display:none;">
+                    <label>Si es humano, no rellene este campo:</label>
+                    <input name="_gotcha" value="">
+                </div>
+
+                <div class="submit-wrap" style="margin-top: 20px;">
+                    <div class="cf-turnstile" data-sitekey="0x4AAAAAADBxa9vBew8w5yRV" data-theme="light" data-appearance="interaction-only"></div>
+                    <button type="submit" class="btn btn-primary btn-large" style="margin-top: 15px;">Enviar mensaje</button>
+                </div>
+            
+            </form>
+        </section>
+    </div>
+</div>
+<!-- FIN FORMULAIRE DE CONTACT -->
+		
+</section></div>
+</div><!-- .row (end) -->
+<div class="clear"></div></div><!-- .content_box (end) -->
+		<div class="clear"></div>
+		<!--.pagination-->
+	</div><!--post-->
+					</div>
+				</div>
+			</div>
+					</div>
+	</div>
+</div>
+
+		<footer class="motopress-wrapper footer">
+			<div class="container">
+				<div class="row">
+					<div class="span12">
+						<div class="row copyright">
+	<div class="span12">
+		<div>
+			<div id="footer-text" class="footer-text">
+				<a href="#top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+					&copy; <span id="current-year"></span> David Famechon
+				</a>
+			</div>
+			
+			<script>
+				document.getElementById("current-year").textContent = new Date().getFullYear();
+			</script>		</div>
+	</div>	
+</div>					</div>
+				</div>
+			</div>
+		</footer>
+		<!--End #motopress-main-->
+	</div>
+	<div id="back-top-wrapper">
+		<p id="back-top">
+			<a href="#top" aria-label="Tornar a dalt" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"><i class="fa-solid fa-chevron-up"></i></a>		</p>
+	</div>
+	
+<script src="assets/js/bundle-laguineu.js"></script>
+
+<script type="text/javascript">
+  jQuery(document).ready(function($) {
+      // Menu bureau
+      $('ul.sf-menu').superfish({
+          delay: 1000,
+          animation: { opacity: "show", height: "show" },
+          speed: "normal",
+          autoArrows: false,
+          disableHI: true
+      });
+      // Menu collant (Sticky)
+      $('.header-wrap').tmStickUp({
+          active: true, pseudo: false
+      });
+  });
 </script>
+
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        // 1. Initialisation des barres de compétences (Skills)
+        $('.skills-item .diagram span').css('width', '0%');
+        $(window).scroll(function() {
+            $('.skills-item').each(function(){
+                var itemPos = $(this).offset().top;
+                var topOfWindow = $(window).scrollTop();
+                if (itemPos < topOfWindow + $(window).height() - 100 && !$(this).hasClass('animated')) {
+                    $(this).addClass('animated');
+                    var level = $(this).attr('data-level'); 
+                    // vitesse remplissage
+                    $(this).find('.diagram span').animate({ width: level + '%' }, 300); 
+                }
+            });
+        });
+
+        // 2. Initialisation de la Galerie (Magnific Popup)
+        $('.masonry-item, .portfolio_item').each(function() {
+            $(this).magnificPopup({
+                delegate: 'a[rel^="prettyPhoto"]', 
+                type: 'image',
+                gallery: { enabled: true, navigateByImgClick: true, preload: [0,1], tCounter: '%curr% / %total%' }
+            });
+        });
+
+        $(window).trigger('scroll'); 
+    });
+</script>
+
+<!--Message confirmation et redirection FORMULAIRE DE CONTACT-->
+<script>
+  var form = document.querySelector(".clean-form");
+  
+  async function handleSubmit(event) {
+    event.preventDefault();
+    var status = document.getElementById("my-form-status") || document.createElement("p");
+    status.id = "my-form-status";
+    form.appendChild(status);
+    
+    var data = new FormData(event.target);
+    fetch(event.target.action, {
+      method: form.method,
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        status.innerHTML = "Gracias! El mensaje se ha enviado correctamente.";
+        status.style.color = "#ffffff";
+        status.style.backgroundColor = "#e65f17";
+        status.style.padding = "10px";
+        status.style.marginTop = "10px";
+        form.reset();
+      } else {
+        response.json().then(data => {
+          if (Object.hasOwn(data, 'errors')) {
+            status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+          } else {
+            status.innerHTML = "Parece que ha habido un problema. Vuelva a intentar.";
+          }
+        })
+      }
+    }).catch(error => {
+      status.innerHTML = "Error de connexión. Revisa tu red.";
+    });
+  }
+  form.addEventListener("submit", handleSubmit)
+</script>
+<!--bouton back to top-->
+<script type="text/javascript">
+  jQuery(document).ready(function($) {
+      $(window).scroll(function () {
+          // Si on descend de plus de 400 pixels
+          if ($(this).scrollTop() > 400) {
+              $('#back-top-wrapper').addClass('is-visible'); 
+          } else {
+              $('#back-top-wrapper').removeClass('is-visible'); 
+          }
+      });
+  });
+</script>
+<script>
+    // Cible la vidéo de la section Services
+    document.addEventListener("DOMContentLoaded", function() {
+        const servicesVideo = document.querySelector('.cherry_video_parallax_1 video');
+        if (servicesVideo) {
+            // 0.75 est la vitesse idéale pour un effet "vaporeux" sans saccades
+            servicesVideo.playbackRate = 0.75; 
+        }
+    });
+</script>
+<!-- <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const phoneLink = document.getElementById('dynamic-phone-link');
+        const phoneNumber = "34687739645"; // Votre numéro sans espaces ni symboles
+        
+        // Détection : Si l'écran est plus large que 1024px, on considère que c'est un Desktop
+        if (window.innerWidth > 1024) {
+            // Lien vers WhatsApp Web
+            phoneLink.href = "https://web.whatsapp.com/send?phone=" + phoneNumber;
+            phoneLink.title = "Ponte en contacto con nosotros por WhatsApp";
+        } else {
+            // Lien d'appel direct pour Mobile/Tablette
+            phoneLink.href = "tel:+" + phoneNumber;
+            phoneLink.title = "Llámanos ahora";
+        }
+    });
+    </script> -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const phoneLink = document.getElementById('dynamic-phone-link');
+            const phoneNumber = "34687739645"; // VOTRE NUMÉRO (Format international sans + ni espaces)
+            
+            // Détection : Desktop vs Mobile
+            if (window.innerWidth > 1024) {
+                // LIEN UNIVERSEL : Priorité à l'application installée, avec repli vers le web
+                phoneLink.href = "https://api.whatsapp.com/send?phone=" + phoneNumber;
+                phoneLink.title = "Ponte en contacto con nosotros por WhatsApp";
+            } else {
+                // Mobile/Tablette : Appel direct
+                phoneLink.href = "tel:+" + phoneNumber;
+                phoneLink.title = "Llámanos ahora";
+            }
+        });
+     </script>
+     <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                if (window.innerWidth > 1024) {
+                    const cursor = document.createElement('div');
+                    cursor.id = 'custom-cursor';
+                    document.body.appendChild(cursor);
+
+                    const orangeSection = document.querySelector('.content_box:not(.contacts)');
+
+                    document.addEventListener('mousemove', function (e) {
+                        cursor.style.left = e.clientX + 'px';
+                        cursor.style.top = e.clientY + 'px';
+
+                        if (orangeSection) {
+                            const rect = orangeSection.getBoundingClientRect();
+                            if (e.clientY >= rect.top && e.clientY <= rect.bottom) {
+                                cursor.classList.add('on-orange');
+                            } else {
+                                cursor.classList.remove('on-orange');
+                            }
+                        }
+                    });
+
+                    document.addEventListener('mouseover', function (e) {
+                        const target = e.target;
+
+                        // 1. ZONE FORMULAIRE : Anneau + Point central
+                        if (target.closest('input, textarea')) {
+                            cursor.classList.add('cursor-form');
+                            cursor.classList.remove('cursor-hover');
+                        }
+                        // 2. AUTRES ZONES (Liens, Boutons, Images Press Book et Image Expérience)
+                        // Note : On retire '.inner_wrap' pour éviter l'effet sur les paragraphes de texte
+                        else if (target.closest('a, button, .masonry-item, .accordion-toggle, .mfp-arrow, .portfolio_item, .span6 img')) {
+                            cursor.classList.add('cursor-hover');
+                            cursor.classList.remove('cursor-form');
+                        }
+                    });
+
+                    document.addEventListener('mouseout', function (e) {
+                        cursor.classList.remove('cursor-hover', 'cursor-form');
+                    });
+
+                    document.addEventListener('mouseleave', () => cursor.style.opacity = '0');
+                    document.addEventListener('mouseenter', () => cursor.style.opacity = '1');
+                }
+            });
+        </script>
+
 </body>
 </html>

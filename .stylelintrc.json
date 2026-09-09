@@ -1,0 +1,9 @@
+{
+    "rules": {
+      "no-duplicate-selectors": true,
+      "block-no-empty": true,
+      "color-no-invalid-hex": true,
+      "declaration-block-no-duplicate-properties": true,
+      "font-family-no-duplicate-names": true
+    }
+  }
